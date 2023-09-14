@@ -3,13 +3,13 @@ pipeline{
     stages {
         stage('gitcheckout'){
             steps {
-                sh 'echo checkings out..'
+                git branch: 'main', url: 'https://github.com/michaelgatta/henry.git'
             }
         }
 
         stage('dockerbuild'){
             steps {
-                sh 'echo docker build'
+                sh 'docker build -t michaelgat/timeserver.'
             }
         }
 
