@@ -1,0 +1,36 @@
+pipeline{
+    agent any
+    stages {
+        stage('gitcheckout'){
+            steps {
+                sh 'echo checkings out..'
+            }
+        }
+
+        stage('dockerbuild'){
+            steps {
+                sh 'echo docker build'
+            }
+        }
+
+        stage('authenticate'){
+            steps {
+                sh 'echo auth'
+            }
+        }
+
+        stage('push to regisry'){
+            steps {
+                sh 'echo push'
+            }
+        }
+
+        stage('clean'){
+            steps {
+                sh 'echo cleanup'
+            }
+        }
+
+        
+    }
+}
