@@ -26,12 +26,21 @@ pipeline{
 
         stage('push to regisry'){
             steps {
-                sh 'echo push'
+                script {
+                    sh 'docker tag michaelgat/timeserver docker.io/ michaelgat/timeserver:$BUILD_ID'
+                    sh 'docker push docker.io/ michaelgat/timeserver:$BUILD_ID'
+
+                }
+            
             }
         }
 
         stage('clean'){
             steps {
+                script {
+                    sh 'docker rmi -f $(docker image ls -aq)'
+                    sh 'docker logout'
+                }
                 sh 'echo cleanup'
             }
         }
