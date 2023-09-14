@@ -9,7 +9,7 @@ pipeline{
 
         stage('dockerbuild'){
             steps {
-                sh 'docker build -t michaelgat/timeserver.'
+                sh 'docker build -t michaelgat/timeserver .'
             }
         }
 
