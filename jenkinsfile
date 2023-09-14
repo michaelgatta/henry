@@ -27,7 +27,7 @@ pipeline{
         stage('push to regisry'){
             steps {
                 script {
-                    sh 'docker tag michaelgat/timeserver docker.io/ michaelgat/timeservermaker:$BUILD_ID'
+                    sh 'docker tag michaelgat/timeserver docker.io/michaelgat/timeservermaker:$BUILD_ID'
                     sh 'docker push docker.io/ michaelgat/timeservermaker:$BUILD_ID'
 
                 }
